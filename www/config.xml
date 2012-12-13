@@ -14,6 +14,8 @@
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
+	
+	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
 
     <preference name="phonegap-version" value="2.0.0" />
     <preference name="orientation"      value="default" />
