@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.pgsampler"
-        version   = "1.0.0">
-    <name>Phone Gap Samplex</name>
+        id        = "com.phonegap.hello-world"
+        version   = "2.0.0">
+    <name>Hello World</name>
 
     <description>
-        A Phone Gap sample app.
+        Hello World sample application that responds to the deviceready event.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
@@ -14,10 +14,8 @@
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
-	
-	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
 
-    <preference name="phonegap-version" value="2.0.0" />
+    <preference name="phonegap-version" value="2.1.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
