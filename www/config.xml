@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.pgsampler"
         version   = "1.0.0">
-    <name>Phone Gap Sampler</name>
+    <name>Phone Gap Samplex</name>
 
     <description>
         A Phone Gap sample app.
