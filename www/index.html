@@ -27,12 +27,12 @@
        <script type="text/javascript">			
 			var divHeading = document.getElementById('heading');
 			function compassSuccess(heading) {
-				divHeading.innerText = 'Heading: ' + heading.magneticHeading;
+				divHeading.innerHTML = '<p>Heading: ' + heading.magneticHeading + '</p>';
 			};
 			function compassError(error) {
-				divHeading.innerText = 'Error: ';
+				divHeading.innerHTML = '<p>Error: </p>';
 			};
-			var compassOptions = {frequency:100};
+			var compassOptions = null;
 			
 	</script>
     </head>
@@ -52,7 +52,7 @@
 			navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
 		</script>
 		<div id="heading">
-			
+			<p>heading here</p>
 		</div>
     </body>
 </html>
