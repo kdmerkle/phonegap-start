@@ -40,11 +40,11 @@ var app = {
 			divHeading.innerHTML = '<p>Heading: ' + heading.magneticHeading + '</p>';
 		};
 		var compassError = function(error) {
-			divHeading.innerHTML = '<p>Error: </p>';
+			divHeading.innerHTML = '<p>Error: </p>' + error.code;
 		};
-		var compassOptions = {frequency: 100};
+		var compassOptions = {frequency: 1000};
 
-		navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
+		var watchId = navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
