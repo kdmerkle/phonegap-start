@@ -43,9 +43,9 @@ var app = {
 		var compassError = function(error) {
 			divHeading.innerHTML = '<p>Error: </p>' + error.code;
 		};
-		var compassOptions = {frequency: 1000};
+		var compassOptions = {frequency: 3000};
 
-		var watchId = navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
+		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
