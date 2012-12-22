@@ -34,6 +34,16 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		
+		var divHeading = document.getElementById('heading');
+		var compassSuccess = function(heading) {
+			divHeading.innerHTML = '<p>Heading: ' + heading.magneticHeading + '</p>';
+		};
+		var  compassError = function(error) {
+			divHeading.innerHTML = '<p>Error: </p>';
+		};
+		var compassOptions = null;
+
 		navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
     },
     // Update DOM on a Received Event
