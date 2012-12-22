@@ -39,10 +39,10 @@ var app = {
 		var compassSuccess = function(heading) {
 			divHeading.innerHTML = '<p>Heading: ' + heading.magneticHeading + '</p>';
 		};
-		var  compassError = function(error) {
+		var compassError = function(error) {
 			divHeading.innerHTML = '<p>Error: </p>';
 		};
-		var compassOptions = null;
+		var compassOptions = {frequency: 100};
 
 		navigator.compass.getCurrentHeading(compassSuccess, compassError, compassOptions);
     },
