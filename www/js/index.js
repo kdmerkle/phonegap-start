@@ -37,7 +37,8 @@ var app = {
 		
 		var divHeading = document.getElementById('heading');
 		var compassSuccess = function(heading) {
-			divHeading.innerHTML = '<p>Heading: ' + heading.magneticHeading + '</p>';
+		
+			divHeading.innerHTML = '<p>Heading: ' Date() + heading.magneticHeading + '</p>';
 		};
 		var compassError = function(error) {
 			divHeading.innerHTML = '<p>Error: </p>' + error.code;
