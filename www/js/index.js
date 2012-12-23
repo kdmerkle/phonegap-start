@@ -36,6 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
 		
 		var divHeading = document.getElementById('heading');
+		var divAppMain = document.getElementById('appMain');
 		var compassSuccess = function(heading) {
 		
 			divHeading.innerHTML = '<p>Heading: ' + Date() + heading.magneticHeading + '</p>';
@@ -46,6 +47,7 @@ var app = {
 		var compassOptions = {frequency: 3000};
 
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+		divAppMain.style = '{display:none}'
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
