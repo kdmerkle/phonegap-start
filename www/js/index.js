@@ -47,7 +47,7 @@ var app = {
 		var compassOptions = {frequency: 3000};
 
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-		divAppMain.style = '{display:none}'
+		divAppMain.style = '{display:none;}'
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
