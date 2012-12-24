@@ -61,7 +61,7 @@ var app = {
 		states[Connection.CELL_3G]  = 'Cell 3G connection';
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.NONE]     = 'No network connection';
-		pConnectionType.innerText = 'Connection type: ' + networkState;
+		pConnectionType.innerText = 'Connection type: ' + states[networkState];
 		
 		//geolocation
 		var geolocationSuccess = function(position) {
