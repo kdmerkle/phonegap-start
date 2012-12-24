@@ -38,7 +38,8 @@ var app = {
 		
 		var pCompassHeading = document.getElementById('compassHeading');		
 		var pConnectionType = document.getElementById('connectionType');		
-		var pPosition = document.getElementById('position');	
+		var pPosition = document.getElementById('position');
+		
 		//compass
 		var compassSuccess = function(heading) {		
 			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
@@ -63,15 +64,14 @@ var app = {
 		
 		//geolocation
 		var geolocationSuccess = function(position) {
-		    pPosition.innerText = 
-				  'Latitude: '          + position.coords.latitude          + '<br />' +
-		          'Longitude: '         + position.coords.longitude         + '<br />' +
-		          'Altitude: '          + position.coords.altitude          + '<br />' +
-		          'Accuracy: '          + position.coords.accuracy          + '<br />' +
-		          'Altitude Accuracy: ' + 'NA'  + '<br />' +
-		          'Heading: '           + position.coords.heading           + '<br />' +
-		          'Speed: '             + position.coords.speed             + '<br />' +
-		          'Timestamp: '         + position.timestamp;
+		    pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
+		          'Longitude: '  + position.coords.longitude;
+		          //'Altitude: '          + position.coords.altitude          + '<br />' +
+		          //'Accuracy: '          + position.coords.accuracy          + '<br />' +
+		          //'Altitude Accuracy: ' + 'NA'  + '<br />' +
+		          //'Heading: '           + position.coords.heading           + '<br />' +
+		          //'Speed: '             + position.coords.speed             + '<br />' +
+		          //'Timestamp: '         + position.timestamp;
 		};
 		var geolocationError = function(error){
 			pPosition.innerText = 'Error:' + error.code;
