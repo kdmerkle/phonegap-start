@@ -28,8 +28,8 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
 
-	<plugin name="compass" value="org.apache.cordova.CompassListener" />
-	<plugin name="connection" value="org.apache.cordova.NetworkManager" />
+	<plugin name="Compass" value="org.apache.cordova.CompassListener" />
+	<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
 	
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
