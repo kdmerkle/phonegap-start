@@ -38,6 +38,8 @@ var app = {
 		
 		var pCompassHeading = document.getElementById('compassHeading');		
 		var pConnectionType = document.getElementById('connectionType');		
+		var pPosition = document.getElementById('position');	
+		//compass
 		var compassSuccess = function(heading) {		
 			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
 		};
@@ -47,7 +49,7 @@ var app = {
 		var compassOptions = {frequency: 1000};
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
 		
-		//network state		
+		//network state			
 		var networkState = navigator.connection.type;
 		var states = {};
 		states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -58,6 +60,25 @@ var app = {
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.NONE]     = 'No network connection';
 		pConnectionType.innerText = 'Connection type: ' + networkState;
+		
+		//geolocation
+		var geolocationSuccess = function(position) {
+		    pPosition.innerText = 
+				  'Latitude: '          + position.coords.latitude          + '<br />' +
+		          'Longitude: '         + position.coords.longitude         + '<br />' +
+		          'Altitude: '          + position.coords.altitude          + '<br />' +
+		          'Accuracy: '          + position.coords.accuracy          + '<br />' +
+		          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br />' +
+		          'Heading: '           + position.coords.heading           + '<br />' +
+		          'Speed: '             + position.coords.speed             + '<br />' +
+		          'Timestamp: '         + position.timestamp;
+		};
+		var geolocationError = function(error){
+			pPosition.innerText = 'Error:' + error.code;
+		};
+		navigator.geolocation.getCurrentPosition(geolocationSuccess, 
+                                         [geolocationError], 
+                                         [geolocationOptions]);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
