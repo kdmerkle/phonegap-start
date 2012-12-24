@@ -56,7 +56,7 @@ var app = {
 		states[Connection.CELL_2G]  = 'Cell 2G connection';
 		states[Connection.CELL_3G]  = 'Cell 3G connection';
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
-		states[Connection.NONE]     = 'No network connection'
+		states[Connection.NONE]     = 'No network connection';
 		pConnectionType.innerText = 'Connection type: ' + states[networkState];
     },
     // Update DOM on a Received Event
