@@ -76,6 +76,7 @@ var app = {
 		var geolocationError = function(error){
 			pPosition.innerText = 'Error:' + error.code;
 		};
+		var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
 		navigator.geolocation.getCurrentPosition(geolocationSuccess, 
                                          [geolocationError], 
                                          [geolocationOptions]);
