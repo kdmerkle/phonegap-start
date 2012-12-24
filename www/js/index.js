@@ -53,6 +53,7 @@ var app = {
 		//network state			
 		var networkState = navigator.connection.type;
 		var states = {};
+		states[0] = 'Wrongo Keebler';
 		states[Connection.UNKNOWN]  = 'Unknown connection';
 		states[Connection.ETHERNET] = 'Ethernet connection';
 		states[Connection.WIFI]     = 'WiFi connection';
