@@ -35,19 +35,17 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 		
-		var divHeading = document.getElementById('heading');
+		var divCompassHeading = document.getElementById('compassHeading');
 		var divAppMain = document.getElementById('appMain');
-		var compassSuccess = function(heading) {
 		
-			divHeading.innerHTML = '<p>Heading: ' + Date() + heading.magneticHeading + '</p>';
+		var compassSuccess = function(heading) {		
+			divCompassHeading.innerText = '<p>Compass Heading: ' + heading.magneticHeading + '</p>';
 		};
 		var compassError = function(error) {
 			divHeading.innerHTML = '<p>Error: </p>' + error.code;
 		};
-		var compassOptions = {frequency: 3000};
-
+		var compassOptions = {frequency: 1000};
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-		divAppMain.style = '{display:none;}'
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
