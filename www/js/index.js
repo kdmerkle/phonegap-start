@@ -34,15 +34,14 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		
-		var divCompassHeading = document.getElementById('compassHeading');
 		var divAppMain = document.getElementById('appMain');
 		
+		var pCompassHeading = document.getElementById('compassHeading');		
 		var compassSuccess = function(heading) {		
-			divCompassHeading.innerText = '<p>Compass Heading: ' + heading.magneticHeading + '</p>';
+			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
 		};
 		var compassError = function(error) {
-			divHeading.innerHTML = '<p>Error: </p>' + error.code;
+			pCompassHeading.innerText = 'Error:' + error.code;
 		};
 		var compassOptions = {frequency: 1000};
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
