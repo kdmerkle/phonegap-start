@@ -68,7 +68,7 @@ var app = {
 		          'Longitude: '         + position.coords.longitude         + '<br />' +
 		          'Altitude: '          + position.coords.altitude          + '<br />' +
 		          'Accuracy: '          + position.coords.accuracy          + '<br />' +
-		          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br />' +
+		          'Altitude Accuracy: ' + 'NA'  + '<br />' +
 		          'Heading: '           + position.coords.heading           + '<br />' +
 		          'Speed: '             + position.coords.speed             + '<br />' +
 		          'Timestamp: '         + position.timestamp;
@@ -77,7 +77,7 @@ var app = {
 			pPosition.innerText = 'Error:' + error.code;
 		};
 		var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
-		navigator.geolocation.getCurrentPosition(geolocationSuccess, 
+		var geoWatchId = navigator.geolocation.watchPosition(geolocationSuccess, 
                                          [geolocationError], 
                                          [geolocationOptions]);
     },
