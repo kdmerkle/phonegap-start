@@ -50,7 +50,8 @@ var app = {
 		var compassOptions = {frequency: 1000};
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
 		
-		//network state			
+		//network state		
+/*		
 		var networkState = navigator.connection.type;
 		var states = {};
 		states[0] = 'Wrongo Keebler';
@@ -62,7 +63,7 @@ var app = {
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.NONE]     = 'No network connection';
 		pConnectionType.innerText = 'Connection type: ' + states[networkState];
-		
+*/		
 		//geolocation
 		var geolocationSuccess = function(position) {
 		    pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
