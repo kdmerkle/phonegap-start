@@ -101,7 +101,7 @@ function onAccelError() {
 function showValues(){
 
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-/*	
+	
 	//network state			
 	var networkState = navigator.connection.type;
 	var states = {};
@@ -114,7 +114,7 @@ function showValues(){
 	states[Connection.CELL_4G]  = 'Cell 4G connection';
 	states[Connection.NONE]     = 'No network connection';
 	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
-
+/*
 	navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
 
 	pDevice.innerText = 'Device Name: ' + device.name     + '<br />' + 
