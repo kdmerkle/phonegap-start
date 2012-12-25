@@ -51,8 +51,7 @@ var app = {
 		var compassOptions = {frequency: 1000};
 		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
 		
-		//network state		
-/*		
+		//network state			
 		var networkState = navigator.connection.type;
 		var states = {};
 		states[0] = 'Wrongo Keebler';
@@ -63,8 +62,7 @@ var app = {
 		states[Connection.CELL_3G]  = 'Cell 3G connection';
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.NONE]     = 'No network connection';
-		pConnectionType.innerText = 'Connection type: ' + states[networkState];
-*/		
+		pConnectionType.innerText = 'Connection type: ' + states[networkState];		
 
 		pDevice.innerText = 'Device: ' + device.name;
 		
