@@ -44,6 +44,11 @@ var app = {
 		//compass
 		var compassSuccess = function(heading) {		
 			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
+			pDevice.innerText = 'Device Name: '     + device.name     + '<br />' + 
+	                            'Device Cordova: '  + device.cordova + '<br />' + 
+	                            'Device Platform: ' + device.platform + '<br />' + 
+	                            'Device UUID: '     + device.uuid     + '<br />' + 
+	                            'Device Version: '  + device.version  + '<br />';
 		};
 		var compassError = function(error) {
 			pCompassHeading.innerText = 'Error:' + error.code;
@@ -64,7 +69,6 @@ var app = {
 		states[Connection.NONE]     = 'No network connection';
 		pConnectionType.innerText = 'Connection type: ' + states[networkState];		
 
-		pDevice.innerText = 'Device: ' + device.name;
 		
 		//geolocation
 		var geolocationSuccess = function(position) {
