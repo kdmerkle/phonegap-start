@@ -45,31 +45,11 @@ var app = {
 		//compass
 		var compassSuccess = function(heading) {		
 			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
-			pDevice.innerText = 'Device Name: '     + device.name     + '<br />' + 
-	                            'Device Cordova: '  + device.cordova + '<br />' + 
-	                            'Device Platform: ' + device.platform + '<br />' + 
-	                            'Device UUID: '     + device.uuid     + '<br />' + 
-	                            'Device Version: '  + device.version  + '<br />';
 		};
 		var compassError = function(error) {
 			pCompassHeading.innerText = 'Error:' + error.code;
 		};
 		var compassOptions = {frequency: 1000};
-		var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-		
-		//network state			
-		var networkState = navigator.connection.type;
-		var states = {};
-		states[0] = 'Wrongo Keebler';
-		states[Connection.UNKNOWN]  = 'Unknown connection';
-		states[Connection.ETHERNET] = 'Ethernet connection';
-		states[Connection.WIFI]     = 'WiFi connection';
-		states[Connection.CELL_2G]  = 'Cell 2G connection';
-		states[Connection.CELL_3G]  = 'Cell 3G connection';
-		states[Connection.CELL_4G]  = 'Cell 4G connection';
-		states[Connection.NONE]     = 'No network connection';
-		pConnectionType.innerText = 'Connection type: ' + states[networkState];		
-
 		
 		//geolocation
 		var geolocationSuccess = function(position) {
@@ -86,23 +66,18 @@ var app = {
 			pPosition.innerText = 'Error:' + error.code;
 		};
 		var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
-		var geoWatchId = navigator.geolocation.watchPosition(geolocationSuccess, 
-                                         [geolocationError], 
-                                         [geolocationOptions]);
 										 
 		//accelerometer
 		function onAccelSuccess(acceleration) {
-	    pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
-	          'Acceleration Y: ' + acceleration.y + '\n' +
-	          'Acceleration Z: ' + acceleration.z + '\n' +
-	          'Timestamp: '      + acceleration.timestamp + '\n';
+		    pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
+		          'Acceleration Y: ' + acceleration.y + '\n' +
+		          'Acceleration Z: ' + acceleration.z + '\n' +
+		          'Timestamp: '      + acceleration.timestamp + '\n';
 		};
 
 		function onAccelError() {
 		    pAccel.innerText = 'Accel Error!';
 		};
-
-		navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
 	},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -116,3 +91,30 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function showValues(){
+
+	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+	
+	//network state			
+	var networkState = navigator.connection.type;
+	var states = {};
+	states[0] = 'Wrongo Keebler';
+	states[Connection.UNKNOWN]  = 'Unknown connection';
+	states[Connection.ETHERNET] = 'Ethernet connection';
+	states[Connection.WIFI]     = 'WiFi connection';
+	states[Connection.CELL_2G]  = 'Cell 2G connection';
+	states[Connection.CELL_3G]  = 'Cell 3G connection';
+	states[Connection.CELL_4G]  = 'Cell 4G connection';
+	states[Connection.NONE]     = 'No network connection';
+	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
+
+	navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
+
+	pDevice.innerText = 'Device Name: ' + device.name     + '<br />' + 
+					'Device Cordova: '  + device.cordova + '<br />' + 
+					'Device Platform: ' + device.platform + '<br />' + 
+					'Device UUID: '     + device.uuid     + '<br />' + 
+					'Device Version: '  + device.version  + '<br />';
+
+}	
