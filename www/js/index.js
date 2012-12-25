@@ -88,7 +88,21 @@ var app = {
 		var geoWatchId = navigator.geolocation.watchPosition(geolocationSuccess, 
                                          [geolocationError], 
                                          [geolocationOptions]);
-    },
+										 
+		//accelerometer
+		function onAccelSuccess(acceleration) {
+	    alert('Acceleration X: ' + acceleration.x + '\n' +
+	          'Acceleration Y: ' + acceleration.y + '\n' +
+	          'Acceleration Z: ' + acceleration.z + '\n' +
+	          'Timestamp: '      + acceleration.timestamp + '\n');
+		};
+
+		function onAccelError() {
+		    alert('onError!');
+		};
+
+		navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
+	},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
