@@ -16,11 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- var pCompassHeading;
- var pConnectionType;
- var pPosition;
- var pDevice;
- var pAccel;
+var pCompassHeading;
+var pConnectionType;
+var pPosition;
+var pDevice;
+var pAccel;
+var networkState;
+var states;
 
 var app = {
     // Application Constructor
@@ -93,19 +95,9 @@ function onAccelSuccess(acceleration) {
 		  'Acceleration Y: ' + acceleration.y + '\n' +
 		  'Acceleration Z: ' + acceleration.z + '\n' +
 		  'Timestamp: '      + acceleration.timestamp + '\n';
-};
-
-function onAccelError() {
-	pAccel.innerText = 'Accel Error!';
-};
-
-function showValues(){
-
-	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-	
-	//network state			
-	var networkState = navigator.connection.type;
-	var states = {};
+		//network state			
+	networkState = navigator.connection.type;
+	states = {};
 	states[0] = 'Wrongo Keebler';
 	states[Connection.UNKNOWN]  = 'Unknown connection';
 	states[Connection.ETHERNET] = 'Ethernet connection';
@@ -116,12 +108,22 @@ function showValues(){
 	states[Connection.NONE]     = 'No network connection';
 	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
 
+};
+
+function onAccelError() {
+	pAccel.innerText = 'Accel Error!';
+};
+
+function showValues(){
+
+	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + device.name     + '<br />' + 
-					'Device Cordova: '  + device.cordova + '<br />' + 
-					'Device Platform: ' + device.platform + '<br />' + 
-					'Device UUID: '     + device.uuid     + '<br />' + 
-					'Device Version: '  + device.version  + '<br />';
+	pDevice.innerText = 'Device Name: ' + device.name     + '\n' + 
+					'Device Cordova: '  + device.cordova + '\n' + 
+					'Device Platform: ' + device.platform + '\n' + 
+					'Device UUID: '     + device.uuid     + '\n' + 
+					'Device Version: '  + device.version  + '\n';
 
 }	
