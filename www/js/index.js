@@ -40,6 +40,7 @@ var app = {
 		var pConnectionType = document.getElementById('connectionType');		
 		var pPosition = document.getElementById('position');
 		var pDevice = document.getElementById('device');
+		var pAccel = document.getElementById('accel');
 		
 		//compass
 		var compassSuccess = function(heading) {		
@@ -91,14 +92,14 @@ var app = {
 										 
 		//accelerometer
 		function onAccelSuccess(acceleration) {
-	    alert('Acceleration X: ' + acceleration.x + '\n' +
+	    pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
 	          'Acceleration Y: ' + acceleration.y + '\n' +
 	          'Acceleration Z: ' + acceleration.z + '\n' +
-	          'Timestamp: '      + acceleration.timestamp + '\n');
+	          'Timestamp: '      + acceleration.timestamp + '\n';
 		};
 
 		function onAccelError() {
-		    alert('onError!');
+		    pAccel.innerText = 'Accel Error!';
 		};
 
 		navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
