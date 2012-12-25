@@ -16,6 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ var pCompassHeading;
+ var pConnectionType;
+ var pPosition;
+ var pDevice;
+ var pAccel;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,12 +40,12 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		var divAppMain = document.getElementById('appMain');		
-		var pCompassHeading = document.getElementById('compassHeading');		
-		var pConnectionType = document.getElementById('connectionType');		
-		var pPosition = document.getElementById('position');
-		var pDevice = document.getElementById('device');
-		var pAccel = document.getElementById('accel');
+		divAppMain = document.getElementById('appMain');		
+		pCompassHeading = document.getElementById('compassHeading');		
+		pConnectionType = document.getElementById('connectionType');		
+		pPosition = document.getElementById('position');
+		pDevice = document.getElementById('device');
+		pAccel = document.getElementById('accel');
 		
 	},
     // Update DOM on a Received Event
@@ -54,12 +60,13 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
 //compass
 var compassSuccess = function(heading) {		
-	app.pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
+	pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
 };
 var compassError = function(error) {
-	app.pCompassHeading.innerText = 'Error:' + error.code;
+	pCompassHeading.innerText = 'Error:' + error.code;
 };
 var compassOptions = {frequency: 1000};
 
@@ -75,20 +82,20 @@ var geolocationSuccess = function(position) {
 		  //'Timestamp: '         + position.timestamp;
 };
 var geolocationError = function(error){
-	app.pPosition.innerText = 'Error:' + error.code;
+	pPosition.innerText = 'Error:' + error.code;
 };
 var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
-	app.pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
+	pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
 		  'Acceleration Y: ' + acceleration.y + '\n' +
 		  'Acceleration Z: ' + acceleration.z + '\n' +
 		  'Timestamp: '      + acceleration.timestamp + '\n';
 };
 
 function onAccelError() {
-	app.pAccel.innerText = 'Accel Error!';
+	pAccel.innerText = 'Accel Error!';
 };
 
 function showValues(){
