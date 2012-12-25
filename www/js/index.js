@@ -85,6 +85,7 @@ var geolocationError = function(error){
 	pPosition.innerText = 'Error:' + error.code;
 };
 var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
+var accelOptions = {frequency: 3000};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
@@ -115,7 +116,7 @@ function showValues(){
 	states[Connection.NONE]     = 'No network connection';
 	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
 
-	navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
+	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
 	pDevice.innerText = 'Device Name: ' + device.name     + '<br />' + 
 					'Device Cordova: '  + device.cordova + '<br />' + 
