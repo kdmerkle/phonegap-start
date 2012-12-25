@@ -93,9 +93,9 @@ var app = {
 };
 
 function showValues(){
-/*
+
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-	
+/*	
 	//network state			
 	var networkState = navigator.connection.type;
 	var states = {};
@@ -117,5 +117,5 @@ function showValues(){
 					'Device UUID: '     + device.uuid     + '<br />' + 
 					'Device Version: '  + device.version  + '<br />';
 */
-alert('here');
+
 }	
