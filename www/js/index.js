@@ -39,6 +39,7 @@ var app = {
 		var pCompassHeading = document.getElementById('compassHeading');		
 		var pConnectionType = document.getElementById('connectionType');		
 		var pPosition = document.getElementById('position');
+		var pDevice = document.getElementById('device');
 		
 		//compass
 		var compassSuccess = function(heading) {		
@@ -64,6 +65,9 @@ var app = {
 		states[Connection.NONE]     = 'No network connection';
 		pConnectionType.innerText = 'Connection type: ' + states[networkState];
 */		
+
+		pDevice.innerText = 'Device: ' + device.name;
+		
 		//geolocation
 		var geolocationSuccess = function(position) {
 		    pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
