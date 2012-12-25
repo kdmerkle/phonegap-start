@@ -56,10 +56,10 @@ var app = {
 };
 //compass
 var compassSuccess = function(heading) {		
-	pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
+	app.pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
 };
 var compassError = function(error) {
-	pCompassHeading.innerText = 'Error:' + error.code;
+	app.pCompassHeading.innerText = 'Error:' + error.code;
 };
 var compassOptions = {frequency: 1000};
 
@@ -75,20 +75,20 @@ var geolocationSuccess = function(position) {
 		  //'Timestamp: '         + position.timestamp;
 };
 var geolocationError = function(error){
-	pPosition.innerText = 'Error:' + error.code;
+	app.pPosition.innerText = 'Error:' + error.code;
 };
 var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
-	pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
+	app.pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
 		  'Acceleration Y: ' + acceleration.y + '\n' +
 		  'Acceleration Z: ' + acceleration.z + '\n' +
 		  'Timestamp: '      + acceleration.timestamp + '\n';
 };
 
 function onAccelError() {
-	pAccel.innerText = 'Accel Error!';
+	app.pAccel.innerText = 'Accel Error!';
 };
 
 function showValues(){
