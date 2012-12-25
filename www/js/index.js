@@ -34,50 +34,13 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		var divAppMain = document.getElementById('appMain');
-		
+		var divAppMain = document.getElementById('appMain');		
 		var pCompassHeading = document.getElementById('compassHeading');		
 		var pConnectionType = document.getElementById('connectionType');		
 		var pPosition = document.getElementById('position');
 		var pDevice = document.getElementById('device');
 		var pAccel = document.getElementById('accel');
 		
-		//compass
-		var compassSuccess = function(heading) {		
-			pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
-		};
-		var compassError = function(error) {
-			pCompassHeading.innerText = 'Error:' + error.code;
-		};
-		var compassOptions = {frequency: 1000};
-		
-		//geolocation
-		var geolocationSuccess = function(position) {
-		    pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
-		          'Longitude: '  + position.coords.longitude;
-		          //'Altitude: '          + position.coords.altitude          + '<br />' +
-		          //'Accuracy: '          + position.coords.accuracy          + '<br />' +
-		          //'Altitude Accuracy: ' + 'NA'  + '<br />' +
-		          //'Heading: '           + position.coords.heading           + '<br />' +
-		          //'Speed: '             + position.coords.speed             + '<br />' +
-		          //'Timestamp: '         + position.timestamp;
-		};
-		var geolocationError = function(error){
-			pPosition.innerText = 'Error:' + error.code;
-		};
-		var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
-										 
-		//accelerometer
-		function onAccelSuccess(acceleration) {
-		    pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
-		          'Acceleration Y: ' + acceleration.y + '\n' +
-		          'Acceleration Z: ' + acceleration.z + '\n' +
-		          'Timestamp: '      + acceleration.timestamp + '\n';
-		};
-
-		function onAccelError() {
-		    pAccel.innerText = 'Accel Error!';
-		};
 	},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -90,6 +53,42 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+};
+//compass
+var compassSuccess = function(heading) {		
+	pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
+};
+var compassError = function(error) {
+	pCompassHeading.innerText = 'Error:' + error.code;
+};
+var compassOptions = {frequency: 1000};
+
+//geolocation
+var geolocationSuccess = function(position) {
+	pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
+		  'Longitude: '  + position.coords.longitude;
+		  //'Altitude: '          + position.coords.altitude          + '<br />' +
+		  //'Accuracy: '          + position.coords.accuracy          + '<br />' +
+		  //'Altitude Accuracy: ' + 'NA'  + '<br />' +
+		  //'Heading: '           + position.coords.heading           + '<br />' +
+		  //'Speed: '             + position.coords.speed             + '<br />' +
+		  //'Timestamp: '         + position.timestamp;
+};
+var geolocationError = function(error){
+	pPosition.innerText = 'Error:' + error.code;
+};
+var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
+								 
+//accelerometer
+function onAccelSuccess(acceleration) {
+	pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
+		  'Acceleration Y: ' + acceleration.y + '\n' +
+		  'Acceleration Z: ' + acceleration.z + '\n' +
+		  'Timestamp: '      + acceleration.timestamp + '\n';
+};
+
+function onAccelError() {
+	pAccel.innerText = 'Accel Error!';
 };
 
 function showValues(){
