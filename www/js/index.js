@@ -114,7 +114,7 @@ function showValues(){
 	states[Connection.CELL_4G]  = 'Cell 4G connection';
 	states[Connection.NONE]     = 'No network connection';
 	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
-/*
+
 	navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onAccelError);
 
 	pDevice.innerText = 'Device Name: ' + device.name     + '<br />' + 
@@ -122,6 +122,5 @@ function showValues(){
 					'Device Platform: ' + device.platform + '<br />' + 
 					'Device UUID: '     + device.uuid     + '<br />' + 
 					'Device Version: '  + device.version  + '<br />';
-*/
 
 }	
