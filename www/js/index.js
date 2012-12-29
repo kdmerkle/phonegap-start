@@ -93,21 +93,7 @@ var accelOptions = {frequency: 3000};
 function onAccelSuccess(acceleration) {
 	pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
 		  'Acceleration Y: ' + acceleration.y + '\n' +
-		  'Acceleration Z: ' + acceleration.z + '\n' +
-		  'Timestamp: '      + acceleration.timestamp + '\n';
-		//network state			
-	networkState = navigator.connection.type;
-	states = {};
-	states[0] = 'Wrongo Keebler';
-	states[Connection.UNKNOWN]  = 'Unknown connection';
-	states[Connection.ETHERNET] = 'Ethernet connection';
-	states[Connection.WIFI]     = 'WiFi connection';
-	states[Connection.CELL_2G]  = 'Cell 2G connection';
-	states[Connection.CELL_3G]  = 'Cell 3G connection';
-	states[Connection.CELL_4G]  = 'Cell 4G connection';
-	states[Connection.NONE]     = 'No network connection';
-	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
-
+		  'Acceleration Z: ' + acceleration.z;
 };
 
 function onAccelError() {
@@ -116,15 +102,23 @@ function onAccelError() {
 
 function showValues(){
 
-	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-	
+	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + device.name     + '\n' + 
-					'Device Cordova: '  + device.cordova + '\n' + 
-					'Device Platform: ' + device.platform + '\n' + 
-					'Device UUID: '     + device.uuid     + '\n' + 
-					'Device Version: '  + device.version  + '\n';
+	pDevice.innerText = 'Device Name: ' + device.name;
+	
+	//network state			
+	networkState = navigator.connection.type;
+	states = {};
+	states[0] = 'Indeterminate';
+	states[Connection.UNKNOWN]  = 'Unknown connection';
+	states[Connection.ETHERNET] = 'Ethernet connection';
+	states[Connection.WIFI]     = 'WiFi connection';
+	states[Connection.CELL_2G]  = 'Cell 2G connection';
+	states[Connection.CELL_3G]  = 'Cell 3G connection';
+	states[Connection.CELL_4G]  = 'Cell 4G connection';
+	states[Connection.NONE]     = 'No network connection';
+	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
 
 }	
 //Camera
