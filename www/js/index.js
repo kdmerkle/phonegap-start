@@ -44,9 +44,9 @@ var app = {
         app.receivedEvent('deviceready');
 		divAppMain = document.getElementById('appMain');		
 		pCompassHeading = document.getElementById('compassHeading');		
-		pConnectionType = document.getElementById('connectionType');		
+		pConnectionType = document.getElementById('connectionTypex');		
 		pPosition = document.getElementById('position');
-		pDevice = document.getElementById('device');
+		pDevice = document.getElementById('devicex');
 		pAccel = document.getElementById('accel');
 		
 	},
