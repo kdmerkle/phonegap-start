@@ -44,9 +44,9 @@ var app = {
         app.receivedEvent('deviceready');
 		divAppMain = document.getElementById('appMain');		
 		pCompassHeading = document.getElementById('compassHeading');		
-		pConnectionType = document.getElementById('connectionTypex');		
+		pConnectionType = document.getElementById('connectionTypeName');		
 		pPosition = document.getElementById('position');
-		pDevice = document.getElementById('devicex');
+		pDevice = document.getElementById('deviceName');
 		pAccel = document.getElementById('accel');
 		
 	},
@@ -91,9 +91,9 @@ var accelOptions = {frequency: 3000};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
-	pAccel.innerText = 'Acceleration X: ' + acceleration.x + '\n' +
-		  'Acceleration Y: ' + acceleration.y + '\n' +
-		  'Acceleration Z: ' + acceleration.z;
+	pAccel.innerText = 'Accel X: ' + acceleration.x + '\n' +
+		  'Accel Y: ' + acceleration.y + '\n' +
+		  'Accel Z: ' + acceleration.z;
 };
 
 function onAccelError() {
@@ -105,10 +105,10 @@ function showValues(){
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + window.device.name;
+	pDevice.innerText = 'Device Name: ' + device.name;
 	
 	//network state			
-	var networkState = navigator.connection.type;
+	var networkState = navigator.network.connection.type;
 	states = {};
 	states[0] = 'Indeterminate';
 	states[Connection.UNKNOWN]  = 'Unknown connection';
