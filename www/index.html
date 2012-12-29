@@ -31,7 +31,10 @@
 		</script>
     </head>
     <body>
-        <div id="appMain" class="app">
+        <div id="appMain">
+			<div>
+				<input type="button" class="button" value="Show Values" onclick="showValues();"/>
+            </div>
 			<div>
 				<p id="compassHeading"></p>
 				<p id="connectionTypeName"></p>
@@ -43,9 +46,6 @@
             <h1>PhoneGap (Cordova) Sampler</h1>
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
-            </div>
-			<div>
-				<input type="button" class="button" value="Show Values" onclick="showValues();"/>
             </div>
   			<div>
 				<a href="camera.html" >Show Camera</a>

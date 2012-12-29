@@ -114,7 +114,7 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-#button{
+.button{
 	width:100px;
 	height:60px;
 }
