@@ -131,7 +131,6 @@ function showValues(){
 function onCameraSuccess(imageURI) {
     var image = document.getElementById('myImage');
     image.src = imageURI;
-	image.style = "display:block;";
 }
 
 function onFail(message) {
