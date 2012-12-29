@@ -105,10 +105,10 @@ function showValues(){
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + device.name;
+	pDevice.innerText = 'Device Name: ' + window.device.name;
 	
 	//network state			
-	networkState = navigator.connection.type;
+	var networkState = navigator.connection.type;
 	states = {};
 	states[0] = 'Indeterminate';
 	states[Connection.UNKNOWN]  = 'Unknown connection';
