@@ -105,7 +105,8 @@ function showValues(){
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + device.name;
+	pDevice.innerText = 'Device Name: ' + device.name + '\n' +
+						'Device Id:' + device.uuid;
 	
 	//network state			
 	var networkState = navigator.network.connection.type;
