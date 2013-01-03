@@ -34,20 +34,18 @@
         <div id="appMain">
             <div id="deviceready" class="blink">
 				<h1>PhoneGap Sampler</h1>
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event listening">Initializing</p>
+                <p class="event received">Ready</p>
             </div>
-			<div>
+			<div id="values">
 				<input type="button" class="button" value="Show Values" onclick="showValues();"/>
-            </div>
-			<div>
-				<p id="compassHeading"></p>
-				<p id="connectionTypeName"></p>
-				<p id="deviceName"></p>
-				<p id="position"></p>
-				<p id="accel"></p>
-			</div>
-  			<div>
+				<p>
+					<label class="lbl">Compass:</label><ul id="compassHeading"><li>North</li><li>South</li></ul>
+					<label class="lbl">Connection:</label><ul id="connectionTypeName"><li>North</li><li>South</li></ul>
+					<label class="lbl">Device:</label><ul id="deviceName"></ul>
+					<label class="lbl">GPS:</label><ul id="position"></ul>
+					<label class="lbl">Accelerometer:</label><ul id="accel"></ul>
+				</p>
 				<a href="camera.html" >Show Camera</a>
             </div>
        </div>

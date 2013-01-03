@@ -65,18 +65,18 @@ var app = {
 
 //compass
 var compassSuccess = function(heading) {		
-	pCompassHeading.innerText = 'Compass Heading: ' + heading.magneticHeading;
+	pCompassHeading.innerHTML = '<li>' + heading.magneticHeading + ' degrees </li>';
 };
 var compassError = function(error) {
-	pCompassHeading.innerText = 'Error:' + error.code;
+	pCompassHeading.innerHTML = '<li>Error:' + error.code + '</li>';
 };
 var compassOptions = {frequency: 1000};
 
 //geolocation
 var geolocationSuccess = function(position) {
-	pPosition.innerText = 'Latitude: ' + position.coords.latitude + '<br />' +
-		  'Longitude: '  + position.coords.longitude;
-		  //'Altitude: '          + position.coords.altitude          + '<br />' +
+	pPosition.innerHTML = '<li>Latitude: ' + position.coords.latitude + '</li>' +
+		  '<li>Longitude: '  + position.coords.longitude + '</li>';
+		  + '<li>Altitude: ' + position.coords.altitude  + '</li>' +
 		  //'Accuracy: '          + position.coords.accuracy          + '<br />' +
 		  //'Altitude Accuracy: ' + 'NA'  + '<br />' +
 		  //'Heading: '           + position.coords.heading           + '<br />' +
@@ -84,20 +84,20 @@ var geolocationSuccess = function(position) {
 		  //'Timestamp: '         + position.timestamp;
 };
 var geolocationError = function(error){
-	pPosition.innerText = 'Error:' + error.code;
+	pPosition.innerHTML = '<li>Error:' + error.code + '</li>';
 };
 var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
 var accelOptions = {frequency: 3000};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
-	pAccel.innerText = 'Accel X: ' + acceleration.x + '\n' +
-		  'Accel Y: ' + acceleration.y + '\n' +
-		  'Accel Z: ' + acceleration.z;
+	pAccel.innerHTML = '<li>Accel X: ' + acceleration.x + '</li>' +
+		  '<li>Accel Y: ' + acceleration.y + '</li>' +
+		  '<li>Accel Z: ' + acceleration.z + '</li>';
 };
 
 function onAccelError() {
-	pAccel.innerText = 'Accel Error!';
+	pAccel.innerHTML = '<li>Accel Error</li>';
 };
 
 function showValues(){
@@ -105,13 +105,12 @@ function showValues(){
 	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 
-	pDevice.innerText = 'Device Name: ' + device.name + '\n' +
-						'Device Id:' + device.uuid;
+	pDevice.innerHTML = '<li>Device Name: ' + device.name + '</li>' +
+						'<li>Device Id:' + device.uuid + '</li>';
 	
 	//network state			
 	var networkState = navigator.network.connection.type;
 	states = {};
-	states[0] = 'Indeterminate';
 	states[Connection.UNKNOWN]  = 'Unknown connection';
 	states[Connection.ETHERNET] = 'Ethernet connection';
 	states[Connection.WIFI]     = 'WiFi connection';
@@ -119,7 +118,7 @@ function showValues(){
 	states[Connection.CELL_3G]  = 'Cell 3G connection';
 	states[Connection.CELL_4G]  = 'Cell 4G connection';
 	states[Connection.NONE]     = 'No network connection';
-	pConnectionType.innerText = 'Connection type: ' + states[networkState];	
+	pConnectionType.innerHTML = '<li>' +states[networkState] + '</li>';	
 
 }	
 //Camera
