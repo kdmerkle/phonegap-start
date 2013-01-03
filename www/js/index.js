@@ -76,7 +76,7 @@ var compassOptions = {frequency: 1000};
 var geolocationSuccess = function(position) {
 	pPosition.innerHTML = '<li>Latitude: ' + position.coords.latitude + '</li>' +
 		  '<li>Longitude: '  + position.coords.longitude + '</li>';
-		  + '<li>Altitude: ' + position.coords.altitude  + '</li>' +
+		  + '<li>Altitude: ' + position.coords.altitude  + '</li>';
 		  //'Accuracy: '          + position.coords.accuracy          + '<br />' +
 		  //'Altitude Accuracy: ' + 'NA'  + '<br />' +
 		  //'Heading: '           + position.coords.heading           + '<br />' +
@@ -91,9 +91,9 @@ var accelOptions = {frequency: 3000};
 								 
 //accelerometer
 function onAccelSuccess(acceleration) {
-	pAccel.innerHTML = '<li>Accel X: ' + acceleration.x + '</li>' +
-		  '<li>Accel Y: ' + acceleration.y + '</li>' +
-		  '<li>Accel Z: ' + acceleration.z + '</li>';
+	pAccel.innerHTML = '<li>X: ' + acceleration.x + '</li>' +
+		  '<li>Y: ' + acceleration.y + '</li>' +
+		  '<li>Z: ' + acceleration.z + '</li>';
 };
 
 function onAccelError() {
