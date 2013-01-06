@@ -136,5 +136,5 @@ function showCamera(){
     destinationType: Camera.DestinationType.FILE_URI }); 
 }
 function getLAHomePage(){
-	$('#divresult').load('http://www.logicaladvantage.com/');
+	$('#divresult').load('http://www.logicaladvantage.com/aboutus_lead.php?staff=3');
 }
