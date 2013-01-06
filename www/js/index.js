@@ -135,3 +135,6 @@ function showCamera(){
 	navigator.camera.getPicture(onCameraSuccess, onFail, { quality: 50, 
     destinationType: Camera.DestinationType.FILE_URI }); 
 }
+function getLAHomePage(){
+	$('#divresult').load('http://www.logicaladvantage.com/');
+}
