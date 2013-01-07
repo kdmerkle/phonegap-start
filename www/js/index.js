@@ -135,6 +135,6 @@ function showCamera(){
 	navigator.camera.getPicture(onCameraSuccess, onFail, { quality: 50, 
     destinationType: Camera.DestinationType.FILE_URI }); 
 }
-function getLAHomePage(){
-	$('#divresult').load('http://www.google.com/');
+function getPhoneGapTest(){
+	$('#divresult').load('http://km.logicaladvantage.com/phonegaptest.htm');
 }
