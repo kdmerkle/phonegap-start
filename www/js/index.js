@@ -105,16 +105,16 @@ function onAccelError() {
 function showValues(){
 
 	//compass
-	navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	//accelerometer
-	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
+	var watchId2 = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 	//GPS
-	navigator.geolocation.watchPosition(geolocationSuccess, [geolocationError], [geolocationOptions]);
+	var watchId3 = navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
 	//Device
 	pDevice.innerHTML = '<li>Device Name: ' + device.name + '</li>' +
 						'<li>Device Id:' + device.uuid + '</li>';
 	
-	//network 			
+	//Network connection			
 	var networkState = navigator.network.connection.type;
 	states = {};
 	states[Connection.UNKNOWN]  = 'Unknown connection';
