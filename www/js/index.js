@@ -74,14 +74,14 @@ var compassOptions = {frequency: 1000};
 
 //geolocation
 var geolocationSuccess = function(position) {
-	pPosition.innerHTML = '<li>Latitude: ' + position.coords.latitude + '</li>' +
-		  '<li>Longitude: '  + position.coords.longitude + '</li>';
-		  + '<li>Altitude: ' + position.coords.altitude  + '</li>';
-		  //'Accuracy: '          + position.coords.accuracy          + '<br />' +
-		  //'Altitude Accuracy: ' + 'NA'  + '<br />' +
-		  //'Heading: '           + position.coords.heading           + '<br />' +
-		  //'Speed: '             + position.coords.speed             + '<br />' +
-		  //'Timestamp: '         + position.timestamp;
+	pPosition.innerHTML =   '<li>Latitude: ' + position.coords.latitude + '</li>' 
+						  + '<li>Longitude: '  + position.coords.longitude + '</li>'
+						  + '<li>Altitude: ' + position.coords.altitude  + '</li>'
+						  + '<li>Accuracy: ' + position.coords.accuracy + '</li>'
+						  + '<li>Altitude Accuracy: NA (Android)' + '</li>'
+						  + '<li>Heading: ' + position.coords.heading + '</li>'
+						  + '<li>Speed: ' + position.coords.speed + '</li>'
+						  + '<li>Timestamp: ' + position.timestamp;
 };
 var geolocationError = function(error){
 	pPosition.innerHTML = '<li>Error:' + error.code + '</li>';
