@@ -87,6 +87,8 @@ var geolocationError = function(error){
 	pPosition.innerHTML = '<li>Error:' + error.code + '</li>';
 };
 var geolocationOptions = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true};
+
+
 var accelOptions = {frequency: 3000};
 								 
 //accelerometer
@@ -102,13 +104,17 @@ function onAccelError() {
 
 function showValues(){
 
-	var watchId = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+	//compass
+	navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+	//accelerometer
 	navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
-
+	//GPS
+	navigator.geolocation.watchPosition(geolocationSuccess, [geolocationError], [geolocationOptions]);
+	//Device
 	pDevice.innerHTML = '<li>Device Name: ' + device.name + '</li>' +
 						'<li>Device Id:' + device.uuid + '</li>';
 	
-	//network state			
+	//network 			
 	var networkState = navigator.network.connection.type;
 	states = {};
 	states[Connection.UNKNOWN]  = 'Unknown connection';
