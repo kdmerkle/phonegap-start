@@ -37,6 +37,7 @@
 	<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 	
     <icon src="icon.png" />
+    <icon src="res/icon/android/favicon.ico"   		gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
