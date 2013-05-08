@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.logicaladvantage.phonegapsampler"
         version   = "1.1.0">
-    <name>KDMPhoneGapSampler</name>
+    <name>PhoneGap Sampler</name>
 
     <description>
         Phone Gap Sampler.
@@ -27,7 +27,7 @@
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
-	<preference name="splash-screen-duration" value="2000" />
+	<preference name="splash-screen-duration" value="10000" />
 
 	<plugin name="Compass" value="org.apache.cordova.CompassListener" />
 	<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
@@ -36,6 +36,7 @@
 	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
 	<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 	
+    <icon src="icon.png" />
     <icon src="res/icon/android/favicon.ico"   		gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
