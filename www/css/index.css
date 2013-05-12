@@ -81,12 +81,19 @@ h1 {
     font-size:20px;
     font-weight:normal;
 	text-align:left;
+	color:green;
 }
+.lbl li{
+    font-size:18px;
+    font-weight:normal;
+	text-align:left;
+	color:red;}
+
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
-    font-size:12px;
+    font-size:18px;
     margin:0px 40px;
     padding:2px 0px;
 	width:200px;
