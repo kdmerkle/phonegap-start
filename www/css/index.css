@@ -83,11 +83,12 @@ h1 {
 	text-align:left;
 	color:green;
 }
-.lbl li{
+li{
     font-size:18px;
     font-weight:normal;
 	text-align:left;
-	color:red;}
+	color:red;
+}
 
 .event {
     border-radius:4px;
