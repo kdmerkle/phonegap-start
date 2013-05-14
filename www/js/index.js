@@ -75,7 +75,7 @@ var compassOptions = {frequency: 1000};
 var geolocationSuccess = function(position) {
 	pPosition.innerHTML =   '<li>Latitude: ' + position.coords.latitude + '</li>' 
 						  + '<li>Longitude: '  + position.coords.longitude + '</li>'
-						  + '<li>Altitude: ' + position.coords.altitude  + '</li>';
+						  + '<li>Altitude: ' + position.coords.altitude  + '</li>'
 						  + '<li>Accuracy: ' + position.coords.accuracy + '</li>'
 						  + '<li>Altitude Accuracy: NA (Android)' + '</li>'
 						  + '<li>Heading: ' + position.coords.heading + '</li>'
