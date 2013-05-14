@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.logicaladvantage.phonegapsampler"
         version   = "1.1.0">
-    <name>PhoneGap Sampler</name>
+    <name>PhoneCap Sampler</name>
 
     <description>
-        Phone Gap Sampler.
+        Phone Cap Sampler.
     </description>
 
     <author href="http://logicaladvantage.com" email="kurtm@logicaladvantage.com">
