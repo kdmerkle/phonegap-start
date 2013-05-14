@@ -48,11 +48,6 @@ var app = {
 		pPosition = document.getElementById('position');
 		pDevice = document.getElementById('deviceName');
 		pAccel = document.getElementById('accel');
-		
-		// Disable caching of AJAX responses
-		$.ajaxSetup ({	    
-		    cache: false
-		});
 	},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -146,5 +141,13 @@ function showCamera(){
     destinationType: Camera.DestinationType.FILE_URI }); 
 }
 function getPhoneGapTest(){
-	$('#divresult').load('http://km.logicaladvantage.com/phonegaptest.htm');
+	$.ajax({
+		url:"http://km.logicaladvantage.com/phonegaptest.htm",
+		cache: false,
+		success: ajaxSuccess
+	});
+	
+}
+function ajaxSuccess(data){
+	$('#divresult').html(data);
 }
