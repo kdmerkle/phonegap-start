@@ -26,11 +26,19 @@
         <title>Compass</title>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/compass.js"></script>
         <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
 				var pCompassHeading = $("#compassHeading");
+				
+				var compassSuccess = function(heading) {		
+					pCompassHeading.innerHTML = '<li>' + heading.magneticHeading + ' degrees </li>';
+				};
+				var compassError = function(error) {
+					pCompassHeading.innerHTML = '<li>Error:' + error.code + '</li>';
+				};
+				var compassOptions = {frequency: 1000};	
+				
 				var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
 			});
 		</script>
