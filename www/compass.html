@@ -28,11 +28,15 @@
         <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-			
+				
+				alert('in documentReady');
+		
 				var compassSuccess = function(heading) {		
+					alert('in CompassSuccess');
 					$("#compassHeading").HTML('<li>' + heading.magneticHeading + ' degrees </li>');
 				};
 				var compassError = function(error) {
+					alert('in CompassError');
 					alert('Error:' + error.code);
 				};
 				
