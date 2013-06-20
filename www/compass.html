@@ -28,7 +28,6 @@
         <script type="text/javascript">
             $(document).ready(function(){
 				
-				alert('in documentReady');
 		
 				var compassSuccess = function(heading) {		
 					alert('in CompassSuccess');
@@ -42,6 +41,7 @@
 				var compassOptions = {frequency: 1000};	
 				
 				var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+				alert(watchId1);
 			});
 		</script>
     </head>
