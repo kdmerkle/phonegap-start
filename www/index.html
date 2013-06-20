@@ -28,9 +28,27 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
+		</script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+				
+		
+				var compassSuccess = function(heading) {		
+					$("#compassheading").html('<li>' + heading.magneticHeading + ' degrees </li>');
+				};
+				var compassError = function(error) {
+					alert('Error:' + error.code);
+				};
+				
+				var compassOptions = {frequency: 1000};	
+				
+				var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+
+			});
 		</script>
     </head>
+   </head>
     <body>
         <div id="appMain">
             <div id="deviceready" class="blink">
@@ -56,7 +74,7 @@
 				<br/>
 				<input type="button" class="button" value="Show Native Values" onclick="showValues();"/>
 				<p>
-					<label class="lbl">Compass:</label><ul id="compassHeading"></ul>
+					<label class="lbl">Compass:</label><ul id="compassheading"></ul>
 					<label class="lbl">Connection:</label><ul id="connectionTypeName"></ul>
 					<label class="lbl">Device:</label><ul id="deviceName"></ul>
 					<label class="lbl">GPS:</label><ul id="position"></ul>

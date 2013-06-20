@@ -31,7 +31,7 @@
 				
 		
 				var compassSuccess = function(heading) {		
-					$("#compassHeading").html('<li>' + heading.magneticHeading + ' degrees </li>');
+					$("#compassheading").html('<li>' + heading.magneticHeading + ' degrees </li>');
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -40,7 +40,7 @@
 				var compassOptions = {frequency: 1000};	
 				
 				var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-				alert(watchId1);
+
 			});
 		</script>
     </head>
@@ -51,7 +51,7 @@
             </div>
 			<div id="values">
 				<p>
-					<label class="lbl">Compass:</label><ul id="compassHeading"></ul>
+					<label class="lbl">Compass:</label><ul id="compassheading"></ul>
 				</p>
 				<a href="index.html" class="button" >Home</a>
             </div>
