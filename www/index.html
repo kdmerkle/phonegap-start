@@ -16,7 +16,7 @@
             $(document).ready(function(){
 					
 				var compassSuccess = function(heading) {		
-					$('#compassheading').html(heading.magneticHeading + ' degrees');
+					$("#compassheading").html(heading.magneticHeading + ' degrees');
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -35,7 +35,7 @@
 				states[Connection.CELL_3G]  = 'Cell 3G connection';
 				states[Connection.CELL_4G]  = 'Cell 4G connection';
 				states[Connection.NONE]     = 'No network connection';
-				$('#connectiontypename').html(states[networkState]);
+				$("#connectiontypename").html(states[networkState]);
 			});
 		</script>
     </head>
