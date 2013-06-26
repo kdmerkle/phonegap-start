@@ -16,7 +16,7 @@
             $(document).ready(function(){
 					
 				var compassSuccess = function(heading) {		
-					$('#compassheading').html('<li>' + heading.magneticHeading + ' degrees </li>');
+					$('#compassheading').html(heading.magneticHeading + ' degrees');
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -35,7 +35,7 @@
 				states[Connection.CELL_3G]  = 'Cell 3G connection';
 				states[Connection.CELL_4G]  = 'Cell 4G connection';
 				states[Connection.NONE]     = 'No network connection';
-				$('#connectiontypename').html('<li>' + states[networkState] + '</li>');
+				$('#connectiontypename').html(states[networkState]);
 			});
 		</script>
     </head>
@@ -65,8 +65,8 @@
 				<br/>
 				<input type="button" class="button" value="Show Native Values" onclick="showValues();"/>
 				<p>
-					<label class="lbl">Compass:</label><ul id="compassheading"></ul>
-					<label class="lbl">Connection:</label><ul id="connectiontypename"></ul>
+					<label class="lbl">Compass:</label><div id="compassheading"></div>
+					<label class="lbl">Connection:</label><div id="connectiontypename"></div>
 					<label class="lbl">Device:</label><ul id="deviceName"></ul>
 					<label class="lbl">GPS:</label><ul id="position"></ul>
 					<label class="lbl">Accelerometer:</label><ul id="accel"></ul>
