@@ -16,14 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var pCompassHeading;
-var pConnectionType;
-var pPosition;
-var pDevice;
-var pAccel;
-var networkState;
-var states;
-
 var app = {
     // Application Constructor
     initialize: function() {
