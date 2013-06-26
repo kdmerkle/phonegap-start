@@ -25,7 +25,17 @@
 				var compassOptions = {frequency: 1000};	
 				
 				navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
-
+				
+				var networkState = navigator.network.connection.type;
+				states = {};
+				states[Connection.UNKNOWN]  = 'Unknown connection';
+				states[Connection.ETHERNET] = 'Ethernet connection';
+				states[Connection.WIFI]     = 'WiFi connection';
+				states[Connection.CELL_2G]  = 'Cell 2G connection';
+				states[Connection.CELL_3G]  = 'Cell 3G connection';
+				states[Connection.CELL_4G]  = 'Cell 4G connection';
+				states[Connection.NONE]     = 'No network connection';
+				$('#connectiontypename').html('<li>' + states[networkState] + '</li>');
 			});
 		</script>
     </head>
@@ -56,7 +66,7 @@
 				<input type="button" class="button" value="Show Native Values" onclick="showValues();"/>
 				<p>
 					<label class="lbl">Compass:</label><ul id="compassheading"></ul>
-					<label class="lbl">Connection:</label><ul id="connectionTypeName"></ul>
+					<label class="lbl">Connection:</label><ul id="connectiontypename"></ul>
 					<label class="lbl">Device:</label><ul id="deviceName"></ul>
 					<label class="lbl">GPS:</label><ul id="position"></ul>
 					<label class="lbl">Accelerometer:</label><ul id="accel"></ul>
