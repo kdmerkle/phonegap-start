@@ -14,9 +14,9 @@
 		</script>
         <script type="text/javascript">
             $(document).ready(function(){
-
 			
 				var compassSuccess = function(heading) {		
+					$('#compassheading').html('<li>'+heading+'</li>');
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -35,6 +35,8 @@
 				states[Connection.CELL_3G]  = 'Cell 3G connection';
 				states[Connection.CELL_4G]  = 'Cell 4G connection';
 				states[Connection.NONE]     = 'No network connection';
+				
+				$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
 			});
 		</script>
     </head>
