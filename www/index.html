@@ -16,7 +16,7 @@
             $(document).ready(function(){
 			
 				var compassSuccess = function(heading) {		
-					$('#compassheading').html('<li>'+heading+'</li>');
+					pCompassHeading.innerHtml = '<li>' + heading + '</li>';
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -24,7 +24,7 @@
 				
 				var compassOptions = {frequency: 1000};	
 				
-				navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
+				var watch1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);
 				
 				var networkState = navigator.network.connection.type;
 				states = {};
@@ -36,7 +36,7 @@
 				states[Connection.CELL_4G]  = 'Cell 4G connection';
 				states[Connection.NONE]     = 'No network connection';
 				
-				$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
+				pConnectionTypeName.innerHtml = '<li>' + states[networkState] + '</li>';				
 			});
 		</script>
     </head>
@@ -66,7 +66,7 @@
 				<br/>
 				<input type="button" class="button" value="Show Native Values" onclick="showValues();"/>
 				<p>
-					<label class="lbl">Compass:</label><div id="compassheading"></div>
+					<label class="lbl">Compass:</label><ul id="compassheading"></div>
 					<label class="lbl">Connection:</label><div id="connectiontypename"></div>
 					<label class="lbl">Device:</label><ul id="deviceName"></ul>
 					<label class="lbl">GPS:</label><ul id="position"></ul>

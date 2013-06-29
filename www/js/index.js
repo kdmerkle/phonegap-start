@@ -16,6 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var pCompassHeading;
+var pConnectionType;
+var pPosition;
+var pDevice;
+var pAccel;
+var networkState;
+var states;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -37,9 +45,9 @@ var app = {
 		divAppMain = document.getElementById('appMain');		
 		pCompassHeading = document.getElementById('compassHeading');		
 		pConnectionType = document.getElementById('connectionTypeName');		
-		pPosition = document.getElementById('position');
-		pDevice = document.getElementById('deviceName');
-		pAccel = document.getElementById('accel');
+//		pPosition = document.getElementById('position');
+//		pDevice = document.getElementById('deviceName');
+//		pAccel = document.getElementById('accel');
 	},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
