@@ -64,18 +64,15 @@ function showValues(){
 
 	//compass
 	var compassOptions = {frequency: 1000};		
-	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	
 	var compassSuccess = function(heading) {		
 		$('#compassheading').html('<li>' + heading + '</li>');
 	};
 	var compassError = function(error) {
 		alert('Error:' + error.code);
-	};
-	
-
-	
-	//alert(watchId1);	
+	};	
+	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+		
 
 //accelerometer
 //	var watchId2 = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
@@ -97,5 +94,4 @@ function showValues(){
 	
 	$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
 	
-	//alert(networkState);
 }	
