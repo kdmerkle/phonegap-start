@@ -15,7 +15,7 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+ 
 var pCompassHeading;
 var pConnectionType;
 var pPosition;
@@ -23,7 +23,7 @@ var pDevice;
 var pAccel;
 var networkState;
 var states;
-
+*/
 var app = {
     // Application Constructor
     initialize: function() {
@@ -43,8 +43,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 		divAppMain = document.getElementById('appMain');		
-		pCompassHeading = document.getElementById('compassHeading');		
-		pConnectionType = document.getElementById('connectionTypeName');		
+//		pCompassHeading = document.getElementById('compassheading');		
+//		pConnectionType = document.getElementById('connectiontypename');		
 //		pPosition = document.getElementById('position');
 //		pDevice = document.getElementById('deviceName');
 //		pAccel = document.getElementById('accel');
@@ -61,12 +61,3 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-/*
-function showValues(){
-
-}	
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-*/
