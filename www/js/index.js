@@ -61,3 +61,6 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function showValues() {
+    alert('Failed because: ');
+}
