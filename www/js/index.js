@@ -61,6 +61,29 @@ var app = {
         alert('Received Event: ' + id);
     }
 };
-function showValues() {
-    alert('Failed because: ');
-}
+
+function showValues(){
+
+	//compass
+	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+	//accelerometer
+//	var watchId2 = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
+	//GPS
+//	var watchId3 = navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
+	//Device
+//	pDevice.innerHTML = '<li>Device Name: ' + device.name + '</li>' +
+//						'<li>Device Id:' + device.uuid + '</li>';
+	
+	var networkState = navigator.network.connection.type;
+	var states = {};
+	states[Connection.UNKNOWN]  = 'Unknown connection';
+	states[Connection.ETHERNET] = 'Ethernet connection';
+	states[Connection.WIFI]     = 'WiFi connection';
+	states[Connection.CELL_2G]  = 'Cell 2G connection';
+	states[Connection.CELL_3G]  = 'Cell 3G connection';
+	states[Connection.CELL_4G]  = 'Cell 4G connection';
+	states[Connection.NONE]     = 'No network connection';
+	
+	$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
+
+}	
