@@ -51,6 +51,7 @@ function showValues(){
 	
 	//Network connection			
 	var networkState = navigator.network.connection.type;
+	
 	states = {};
 	states[Connection.UNKNOWN]  = 'Unknown connection';
 	states[Connection.ETHERNET] = 'Ethernet connection';

@@ -85,5 +85,6 @@ function showValues(){
 	states[Connection.NONE]     = 'No network connection';
 	
 	$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
-
+	
+	alert(networkState);
 }	
