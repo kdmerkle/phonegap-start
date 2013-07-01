@@ -63,6 +63,9 @@ var app = {
 function showValues(){
 
 	//compass
+	var compassOptions = {frequency: 1000};		
+	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
+	
 	var compassSuccess = function(heading) {		
 		$('#compassheading').html('<li>' + heading + '</li>');
 	};
@@ -70,9 +73,8 @@ function showValues(){
 		alert('Error:' + error.code);
 	};
 	
-	var compassOptions = {frequency: 1000};	
+
 	
-	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
 	//alert(watchId1);	
 
 //accelerometer
