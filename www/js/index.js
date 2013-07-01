@@ -57,16 +57,25 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        alert('Received Event: ' + id);
     }
 };
 
 function showValues(){
 
 	//compass
+	var compassSuccess = function(heading) {		
+		$('#compassheading').html('<li>' + heading + '</li>');
+	};
+	var compassError = function(error) {
+		alert('Error:' + error.code);
+	};
+	
+	var compassOptions = {frequency: 1000};	
+	
 	var watchId1 = navigator.compass.watchHeading(compassSuccess, compassError, compassOptions);	
-	//accelerometer
+	//alert(watchId1);	
+
+//accelerometer
 //	var watchId2 = navigator.accelerometer.watchAcceleration(onAccelSuccess, onAccelError, accelOptions);
 	//GPS
 //	var watchId3 = navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
@@ -74,7 +83,7 @@ function showValues(){
 //	pDevice.innerHTML = '<li>Device Name: ' + device.name + '</li>' +
 //						'<li>Device Id:' + device.uuid + '</li>';
 	
-	var networkState = navigator.network.connection.type;
+	var networkState = navigator.connection.type;
 	var states = {};
 	states[Connection.UNKNOWN]  = 'Unknown connection';
 	states[Connection.ETHERNET] = 'Ethernet connection';
@@ -86,5 +95,5 @@ function showValues(){
 	
 	$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
 	
-	alert(networkState);
+	//alert(networkState);
 }	
