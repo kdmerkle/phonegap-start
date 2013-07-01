@@ -18,7 +18,7 @@
 				app.initialize();
 			
 				var compassSuccess = function(heading) {		
-					pCompassHeading.innerHTML = '<li>' + heading + '</li>';
+					$('#compassheading').html = '<li>' + heading + '</li>';
 				};
 				var compassError = function(error) {
 					alert('Error:' + error.code);
@@ -38,7 +38,7 @@
 				states[Connection.CELL_4G]  = 'Cell 4G connection';
 				states[Connection.NONE]     = 'No network connection';
 				
-				pConnectionTypeName.innerHTML = '<li>' + states[networkState] + '</li>';				
+				$('#connectiontypename').html = '<li>' + states[networkState] + '</li>';				
 			});
 		</script>
     </head>
