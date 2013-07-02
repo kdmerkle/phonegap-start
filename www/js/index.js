@@ -106,7 +106,7 @@ function showValues(){
 	
 	
 	//Device
-	$('#device').html('<li>Device Name: ' + device.name + '</li>' +	'<li>Device Id:' + device.uuid + '</li>');
+	$('#devicename').html('<li>Device Name: ' + device.name + '</li>' +	'<li>Device Id:' + device.uuid + '</li>');
 	
 	//Network Connection
 	var networkState = navigator.connection.type;
