@@ -61,7 +61,7 @@ var app = {
 };
 
 function showValues(){
-
+/*
 	//compass
 	var compassOptions = {frequency: 1000};		
 	
@@ -93,5 +93,5 @@ function showValues(){
 	states[Connection.NONE]     = 'No network connection';
 	
 	$('#connectiontypename').html('<li>' + states[networkState] + '</li>');				
-	
+	*/
 }	
