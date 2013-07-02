@@ -66,7 +66,7 @@ function showValues(){
 	var compassOptions = {frequency: 1000};		
 	
 	var compassSuccess = function(heading) {		
-		$('#compassheading').html('<li>' + heading + '</li>');
+		$('#compassheading').html('<li>' + heading.magneticHeading + '</li>');
 	};
 	var compassError = function(error) {
 		alert('Error:' + error.code);
