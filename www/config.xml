@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 	<!--Application Information -->
-	<widget xmlns     = "http://www.w3.org/ns/widgets"
+	<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.logicaladvantage.phonegapsampler"
-        version   = "1.5.1">
-    <name>PhoneCap Sampler</name>
+        version   = "0.0.9">
+    <name>PhoneStock</name>
 
     <description>
-        Phone Cap Sampler.
+        Phone Gap Sampler App.
     </description>
 
     <author href="http://logicaladvantage.com" email="kurtm@logicaladvantage.com">
@@ -26,10 +26,11 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 	
-    <preference name="phonegap-version" value="2.9.0" />
-    <preference name="orientation"      value="default" />
-    <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
+	<!--Preferences inform the build service how to build the app -->
+    <preference name="phonegap-version" value="2.9.0" /><!--remove version preference to defaul to current version, versions prior to 2.0.0 have been deprecated -->
+    <preference name="orientation"      value="default" /><!-- default means both portrait AND landscape are enabled.  remove orientation setting to use device's default (usually portrait) -->
+    <preference name="target-device"    value="universal" /><!-- value="handset" and value="tablet"  relate only to iOS -->
+    <preference name="fullscreen"       value="false" /><!-- true -> hides the status screen -->
 	<preference name="splash-screen-duration" value="6000" />
 
 	<plugin name="Compass" value="org.apache.cordova.CompassListener" />
