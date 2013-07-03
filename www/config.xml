@@ -27,7 +27,7 @@
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
-	<preference name="splash-screen-duration" value="5000" />
+	<preference name="splash-screen-duration" value="6000" />
 
 	<plugin name="Compass" value="org.apache.cordova.CompassListener" />
 	<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
