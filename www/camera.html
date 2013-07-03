@@ -8,12 +8,23 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Ajax Test</title>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            
+			document.addEventListener('deviceready', this.onDeviceReady, false);
+
+			function onCameraSuccess(imageURI) {
+			    var image = document.getElementById('cameraImage');
+			    image.src = imageURI;
+			}
+
+			function onDeviceReady(){				
+				navigator.camera.getPicture(onCameraSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI }); 
+			}
+	</script>
     </head>
     <body>
 		<div>
-			<input type="button" class="button" value="Get Camera" onclick="showCamera();"/>
-			<img style="display:block;width:438px;height:720px;" id="myImage" src="" />
+			<img style="display:block;width:100%;height:90%;" id="cameraImage" src="" />
 		</div>
     </body>
 </html>
