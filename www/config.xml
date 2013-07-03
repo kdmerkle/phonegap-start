@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns     = "http://www.w3.org/ns/widgets"
+
+	<!--Application Information -->
+	<widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.logicaladvantage.phonegapsampler"
         version   = "1.5.1">
@@ -13,6 +15,7 @@
         Kurt Merkle
     </author>
 
+	<!--Application Information -->
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/battery"/>
 	<feature name="http://api.phonegap.com/1.0/camera"/>
