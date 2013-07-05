@@ -139,13 +139,14 @@ li{
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
-    font-size:18px;
+    font-size:24px;
     margin:0px 40px;
     padding:2px 0px;
 	width:200px;
 }
 
 .event.listening {
+
     background-color:#333333;
     display:block;
 }
