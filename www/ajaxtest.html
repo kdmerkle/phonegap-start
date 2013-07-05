@@ -9,17 +9,18 @@
         <title>Ajax Call</title>
         <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
         <script type="text/javascript">
-		$(document).ready(function (){
+		
 			function ajaxSuccess(data){
 				$('#divresult').html(data);
 			}
 			
-			$.ajax({
-				url:"http://km.logicaladvantage.com/phonegaptest.htm",
-				cache: false,
-				success: ajaxSuccess
+			$(document).ready(function (){		
+				$.ajax({
+					url:"http://km.logicaladvantage.com/phonegaptest.htm",
+					cache: false,
+					success: ajaxSuccess
+				});	
 			});	
-		});	
 		</script>
     </head>
     <body>
