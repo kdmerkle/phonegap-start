@@ -14,9 +14,10 @@
 			//document.addEventListener('deviceready', this.onDeviceReady, false);
 		
 			function ajaxSuccess(data){
-				$("#divresult").html(data);
+				$('#divresult').html(data);
 			}			
 			function getHTML(){		
+				alert('here');
 				$.ajax({
 					url:"http://km.logicaladvantage.com/phonegaptest.htm",
 					cache: false,
