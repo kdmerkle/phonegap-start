@@ -11,13 +11,15 @@
         <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
 		<script type="text/javascript">
             
-			//document.addEventListener('deviceready', this.onDeviceReady, false);
+			document.addEventListener('deviceready', this.onDeviceReady, false);
 		
+			function onDeviceReady(){
+				getHTML();
+			}
 			function ajaxSuccess(data){
 				$('#divresult').html(data);
 			}			
 			function getHTML(){		
-				alert('here');
 				$.ajax({
 					url:"http://km.logicaladvantage.com/phonegaptest.htm",
 					cache: false,
