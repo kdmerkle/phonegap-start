@@ -19,11 +19,12 @@
 			
 			function onDeviceReady(){
 				alert('deviceReady');
-				//getHTML();
+				getHTML();
 			}
+			
 			function ajaxSuccess(data, textStatus, jqXHR){
-				alert('ajaxSuccess');
-				$('#divresult').html(data);
+				alert(data);
+				$("#divresult").html(data);
 			}			
 			function ajaxError(jqXHR, textStatus, errorThrown){
 				alert(textStatus + ': ' + errorThrown);
