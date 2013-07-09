@@ -12,10 +12,14 @@
 		<script type="text/javascript">
             
 			document.addEventListener('deviceready', this.onDeviceReady, false);
-		
+			
+			$(document).ready(function() {
+				alert('documentReady');
+			});
+			
 			function onDeviceReady(){
 				alert('deviceReady');
-				getHTML();
+				//getHTML();
 			}
 			function ajaxSuccess(data, textStatus, jqXHR){
 				alert('ajaxSuccess');
