@@ -12,19 +12,12 @@
 		<script type="text/javascript">
             
 			document.addEventListener('deviceready', this.onDeviceReady, false);
-			
-			$(document).ready(function() {
-				//alert('documentReady');
-			});
-			
+					
 			function onDeviceReady(){
-				//alert('deviceReady');
 				getHTML();
-			}
-			
+			}		
 			function ajaxSuccess(data, textStatus, jqXHR){
-				//alert(textStatus);
-				$("#divresult").html(data);
+				$('#divresult').html(data);
 			}			
 			function ajaxError(jqXHR, textStatus, errorThrown){
 				alert(textStatus + ': ' + errorThrown);
@@ -42,8 +35,10 @@
 		</script>
     </head>
     <body>
-		<div>			
-			<a href="#" onclick="javascript:getHTML();" class="button" >Get HTML</a>
+		<div>
+			<div>
+				<h1>Simple Ajax call...</h1>
+            </div>			
 			<div id="divresult"></div>
 		</div>
     </body>
