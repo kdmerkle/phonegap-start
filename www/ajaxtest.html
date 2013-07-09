@@ -8,11 +8,12 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Ajax Call</title>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/jquery1.8.3-min.js"></script>
+        <script type="text/javascript" src="js/jquery2.0.3-min.js"></script>
 		<script type="text/javascript">
             
 			document.addEventListener('deviceready', this.onDeviceReady, false);
 		
+			$(document).ready(){}
 			function onDeviceReady(){
 				alert('deviceReady');
 				getHTML();
