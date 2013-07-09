@@ -16,15 +16,20 @@
 			function onDeviceReady(){
 				getHTML();
 			}
-			function ajaxSuccess(data){
+			function ajaxSuccess(data, textStatus, jqXHR){
 				$('#divresult').html(data);
 			}			
+			function ajaxError(jqXHR, textStatus, errorThrown){
+				alert(textStatus + ': ' + errorThrown);
+			}			
 			function getHTML(){		
-				alert('here');
 				$.ajax({
 					url:"http://km.logicaladvantage.com/phonegaptest.htm",
+					type: "GET",
+					dataType: "html",
 					cache: false,
-					success: ajaxSuccess
+					success: ajaxSuccess,
+					error: ajaxError
 				});	
 			}			
 		</script>
