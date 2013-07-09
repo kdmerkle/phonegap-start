@@ -14,16 +14,16 @@
 			document.addEventListener('deviceready', this.onDeviceReady, false);
 			
 			$(document).ready(function() {
-				alert('documentReady');
+				//alert('documentReady');
 			});
 			
 			function onDeviceReady(){
-				alert('deviceReady');
+				//alert('deviceReady');
 				getHTML();
 			}
 			
 			function ajaxSuccess(data, textStatus, jqXHR){
-				alert(textStatus);
+				//alert(textStatus);
 				$("#divresult").html(data);
 			}			
 			function ajaxError(jqXHR, textStatus, errorThrown){
@@ -31,9 +31,9 @@
 			}			
 			function getHTML(){		
 				$.ajax({
-					url:"http://km.logicaladvantage.com/phonegaptest.htm",
+					url:"http://km.logicaladvantage.com/",
 					type: "GET",
-					dataType: "html",
+					dataType: "text",
 					cache: false,
 					success: ajaxSuccess,
 					error: ajaxError

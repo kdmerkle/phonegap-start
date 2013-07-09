@@ -14,7 +14,8 @@
     <author href="http://logicaladvantage.com" email="kurtm@logicaladvantage.com">
         Kurt Merkle
     </author>
-
+	
+	
 	<!--Application Information -->
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/battery"/>
@@ -25,6 +26,9 @@
 	<feature name="http://api.phonegap.com/1.0/media"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/notification"/>
+	
+	<!--Domain Whitelist VERY IMPORTANT FOR X-DOMAIN CALLS -->	
+	<access origin="http://logicaladvantage.com" />
 	
 	<!--Preferences inform the build service how to build the app -->
     <preference name="phonegap-version" value="2.9.0" /><!--remove version preference to defaul to current version, versions prior to 2.0.0 have been deprecated -->
