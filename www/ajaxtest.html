@@ -20,6 +20,7 @@
 				$('#divresult').html(data);
 			}			
 			function getHTML(){		
+				alert('here');
 				$.ajax({
 					url:"http://km.logicaladvantage.com/phonegaptest.htm",
 					cache: false,
@@ -30,8 +31,8 @@
     </head>
     <body>
 		<div>			
+			<a href="#" onclick="javascript:getHTML();" class="button" >Get HTML</a>
 			<div id="divresult"></div>
-			<a href="javascript:void(0);" onclick="javascript:getHTML();" class="button" >Get HTML</a>
 		</div>
     </body>
 </html>
