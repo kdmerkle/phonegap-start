@@ -14,9 +14,11 @@
 			document.addEventListener('deviceready', this.onDeviceReady, false);
 		
 			function onDeviceReady(){
+				alert('deviceReady');
 				getHTML();
 			}
 			function ajaxSuccess(data, textStatus, jqXHR){
+				alert('ajaxSuccess');
 				$('#divresult').html(data);
 			}			
 			function ajaxError(jqXHR, textStatus, errorThrown){
